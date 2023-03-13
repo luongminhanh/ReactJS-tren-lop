@@ -1,0 +1,25 @@
+.youtube-list {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .youtube-item {
+    width: 200px;
+    height: 200px;
+    gap: 2rem;
+    margin-right: 30px;
+    margin: 0;
+  }
+  
+  .youtube-item img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .youtube-item p{
+    width: 200px;
+    margin: 0;
+    padding: 0;
+  }
