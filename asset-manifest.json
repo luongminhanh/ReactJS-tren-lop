@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "./static/css/main.4e0a2b25.css",
+    "main.js": "./static/js/main.cf275afd.js",
+    "static/js/787.7efd31bd.chunk.js": "./static/js/787.7efd31bd.chunk.js",
+    "static/media/your-turn-collage.jpg": "./static/media/your-turn-collage.dc96d606b9b423559a9a.jpg",
+    "static/media/image2.png": "./static/media/image2.dff91b890d9bdb46101d.png",
+    "static/media/image3.png": "./static/media/image3.af4a80db0a931b6ff1c6.png",
+    "static/media/image4.png": "./static/media/image4.4ceb1325afbed816f221.png",
+    "static/media/moon.png": "./static/media/moon.4cf8baf5f07afef5f23f.png",
+    "static/media/image1.png": "./static/media/image1.e7119410afa56bc6d872.png",
+    "index.html": "./index.html",
+    "main.4e0a2b25.css.map": "./static/css/main.4e0a2b25.css.map",
+    "main.cf275afd.js.map": "./static/js/main.cf275afd.js.map",
+    "787.7efd31bd.chunk.js.map": "./static/js/787.7efd31bd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e0a2b25.css",
+    "static/js/main.cf275afd.js"
+  ]
+}
