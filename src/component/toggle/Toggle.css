@@ -8,17 +8,19 @@
 }
 
 .full-body {
-    background-color: rgba(231, 223, 147, 0.8);
-    height: 200vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     transition: all 1s linear;
     font-family: 'Noto Serif', sans-serif;
+    background-image: url(https://img.freepik.com/free-vector/pattern-with-child-drawings_23-2147516645.jpg?w=2000);
 }
 
 .full-body.show {
+    height: auto;
     background-color: rgb(31, 25, 25);
     transition: all 1s linear;
+    background-image: none;
 }
 
 .toggle {
@@ -58,18 +60,14 @@
 
 .little-stories.show {
     display: block;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
     transition: all 1s linear;
 }
 
-.content {
-    background: -webkit-linear-gradient(#ea0909, #3460da);
-    display: inline-block;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    font-size: 1rem;
-    font-weight: 700;
-}
 .little-stories h1 {
     background: -webkit-linear-gradient(#e80707, #2725c2);
     display: inline-block;
@@ -78,10 +76,14 @@
     background-clip: text;
     font-weight: 700;
     font-size: 30px;
+    text-align: center;
 }
 .little-stories-content img {
-    width: 30%;
-    height: 15%;
-    margin: 2% 35%;
+    width: 23%;
     object-fit: cover;
+    height: 15%;
+    object-fit: cover;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
