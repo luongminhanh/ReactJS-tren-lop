@@ -22,7 +22,7 @@ const Game = () => {
     return (
         <div className='game-container'>
             <Board cells={board} onClick={handleClick} />
-            <p>{winner ? `Winner is ${xIsNext ? "O !" : "X !"}` : "Chưa có winner!"}</p>
+            <p class="talk">{winner ? `Winner is ${xIsNext ? "O !" : "X !"}` : "Chưa có winner!"}</p>
             <br/>
             <button className="game-reset" onClick={handleResetGame}>Reset Game</button>
         </div>
