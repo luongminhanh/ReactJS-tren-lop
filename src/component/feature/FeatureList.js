@@ -2,10 +2,9 @@ import React from 'react'
 import FeatureItem from './FeatureItem'
 import FeatureData from './FeatureData.js'
 import './FeatureList.css'
-import ellipse1 from '../../assets/ellipse1.png'
 
 const FeatureList = () => {
-  
+
   return (
     <div className='container'>
       <div className='feature-title'>

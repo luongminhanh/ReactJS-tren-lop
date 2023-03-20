@@ -1,6 +1,4 @@
 {
-  "homepage": "http://luongminhanh.github.io/asha-web",
-  "name": "arsha",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
