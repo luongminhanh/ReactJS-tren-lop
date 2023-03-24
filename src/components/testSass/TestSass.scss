@@ -1,0 +1,26 @@
+//bien toan cuc 
+$color: purple;
+$a: 40;
+$fontWeight: 100+$a;
+//mixin responsive
+
+@mixin test($a) {
+    @content;
+    color: gray;
+    font-size: $a;
+}
+.cha {
+    color: $color;
+    font-size: 30px;
+    font-weight: $fontWeight;
+    @include test(100px){};
+    &__con {
+        //bien cục bộ
+        color: blue;
+        font-size: 20px;
+        &-chau{
+            color: yellow;
+            font-size: 20px;
+        }
+    }
+}

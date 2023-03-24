@@ -1,15 +1,20 @@
 import './App.css'
-import FeatureItem from './component/feature/FeatureItem';
-import FeatureList from './component/feature/FeatureList';
-import Game from './component/tictactoe/Game';
-import Toggle from './component/toggle/Toggle';
+import Student from './components/testCssModule/Student';
+import Teacher from './components/testCssModule/Teacher';
+import FeatureItem from './components/feature/FeatureItem';
+import FeatureList from './components/feature/FeatureList';
+import Game from './components/tictactoe/Game';
+import Toggle from './components/toggle/Toggle';
+import TestSass from './components/testSass/TestSass';
 
 function App() {
   return (
     <div className="App">
-      <Toggle />
-      <FeatureList />
-      <Game />
+      <FeatureList/>
+      <Toggle/>
+      <TestSass/>
+      <Student/>
+      <Teacher/>
     </div>
   );
 }
