@@ -1,4 +1,4 @@
-
+@import './_mixins.scss';
 
 .list-images {
     @include tablet() {
@@ -13,6 +13,9 @@
     @include tablet() {
         margin-left: 100%;
     }
+
+    ;
+
     @include mobile() {
         margin-left: 35%;
     }
