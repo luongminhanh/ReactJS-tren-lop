@@ -13,9 +13,6 @@
     @include tablet() {
         margin-left: 100%;
     }
-
-    ;
-
     @include mobile() {
         margin-left: 35%;
     }

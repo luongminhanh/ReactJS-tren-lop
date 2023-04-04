@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { DotLoader } from 'react-spinners';
-import '../../assets/sass/components/Example.scss'
 
 function Example() {
     const [images, setImages] = useState([]);
@@ -19,6 +18,7 @@ function Example() {
 
     useEffect(() => {
         handleLoadMorePhotos();
+        // eslint-disable-next-line
     }, [])
 
     return (
@@ -27,7 +27,7 @@ function Example() {
                 {images.length ?
                     images.map((image) => {
                         return <div key={image.id} >
-                            <img className='m-auto w-[85%] h-[200px] rounded-lg  drop-shadow-lg object-cover' src={image.download_url} />
+                            <img className='m-auto w-[85%] h-[200px] rounded-lg  drop-shadow-lg object-cover' src={image.download_url} alt={image.author}/>
                         </div>
                     })
                     :
