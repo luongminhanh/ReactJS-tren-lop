@@ -1,19 +1,27 @@
+import axios from 'axios';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { DotLoader } from 'react-spinners';
 
-function Example() {
+function Photos() {
     const [images, setImages] = useState([]);
     const [page, setPage] = useState(2);
 
-    const handleLoadMorePhotos = () => {
-        fetch(`https://picsum.photos/v2/list?page=${page}&limit=8`)
-            .then(res => res.json())
-            .then(photos => {
-                const newPhotos = [...images, ...photos];
-                setImages(newPhotos);
-                setPage(page + 1);
-            }, [])
+    const getMorePhotos = async () => {
+        try {
+            const photos = await axios.get(`https://picsum.photos/v2/list?page=${page}&limit=8`);
+            return photos.data;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+    const handleLoadMorePhotos = async () => {
+        const photos = await getMorePhotos(page);
+        console.log(photos);
+        const newPhotos = [...images, ...photos];
+        setImages(newPhotos);
+        setPage(page + 1);
     }
 
     useEffect(() => {
@@ -22,12 +30,12 @@ function Example() {
     }, [])
 
     return (
-        <div>
-            <div className='list-images grid grid-cols-4 gap-5 w-[100%] mt-10'>
+        <div className='bg-black'>
+            <div className='list-images grid grid-cols-4 gap-3 w-[100%] pt-10'>
                 {images.length ?
                     images.map((image) => {
                         return <div key={image.id} >
-                            <img className='m-auto w-[85%] h-[200px] rounded-lg  drop-shadow-lg object-cover' src={image.download_url} alt={image.author}/>
+                            <img className='m-auto mb-7 w-[85%] h-[200px] rounded-lg  drop-shadow-lg object-cover p-3 bg-white' src={image.download_url} alt={image.author} />
                         </div>
                     })
                     :
@@ -41,4 +49,4 @@ function Example() {
     );
 }
 
-export default Example
+export default Photos

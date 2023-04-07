@@ -1,10 +1,10 @@
 import './App.css'
-import Example from './components/useEffect/Example';
+import Photos from './components/useEffect/Photos';
 
 function App() {
   return (
     <div>
-      <Example />
+      <Photos />
     </div>
   )
 }
