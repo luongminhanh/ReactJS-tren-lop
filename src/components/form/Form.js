@@ -1,72 +1,68 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
 
 const Form = () => {
-    const [firstname, setFirstname] = useState('');
-    const [lastname, setLastname] = useState('');
-    const [error, setError] = useState(false);
-    const [values, setValues] = useState({
-        firstname: "",
-        lastname: "",
-        hobby: false
+
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: ''
+        },
+        validationSchema: Yup.object({
+            email: Yup.string()
+                .required("Required")
+                .email("Invalid email"),
+            password: Yup.string()
+                .required('Required')
+                .min(8, 'Password is too short - should be 8 characters minimum.')
+                .matches(/[a-zA-Z]/, 'Password must contain Latin letters.')
+        }),
+        onSubmit: () => {
+            axios.post('https://reqres.in/api/login', formik.values)
+                .then(res => {
+                    console.log(res)
+                    alert("Login successfully!")
+                }
+                )
+                .catch(error => {
+                    console.log(error)
+                    alert("Incorrect email or password!");
+                }
+                )
+
+        }
     })
-    // const handleOnchangeFirst = (e) => {
-    //     let a = setInterval(()=> {
-    //         return e.target.value;
-    //     }, 2000)
-    //     setFirstname(a);
-    //     console.log(firstname);
-    // }
-    const handleError = (e) => {
-        if (e.target.value.length < 10) {
-            setError(true);
-        } else setError(false);
-
-    }
-
-    const handleOnchange = (e) => {
-        const type= e.target.type;
-        setValues({
-            ...values,
-            [e.target.name]: type ==="checkbox" ? e.target.checked : e.target.value
-        })
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(firstname);
-        console.log(lastname);
-    }
+    console.log(formik.values);
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="firstname">First name</label>
-            <input
-                className="w-full max-w-[300px] p-5 border border-gray-200 rounded-lg"
-                type="text"
-                name="firstname"
-                // value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
-                placeholder="Type first name here..."
-            />
-            <input/>
-            <br />
-            <label htmlFor="lastname">Last name</label>
-            <input
-                className="w-full max-w-[300px] p-5 border border-gray-200 rounded-lg"
-                type="text"
-                name="lastname"
-                // value={lastname}
-                placeholder="Type last name here..."
-                onChange={(e) => setLastname(e.target.value)}
-                // onChange={handleOnchange}
-            />
-            <label htmlFor="hobby">Hobby</label>
-            <input
-                // className="w-full max-w-[300px] p-5 border border-gray-200 rounded-lg"
-                type="checkbox"
-                name="hobby"
-                // value={lastname}
-                onChange={handleOnchange}
-            />
-            <button>Submit</button>
+        <form
+            onSubmit={formik.handleSubmit}
+            className='p-10 w-full max-w-[500px] mx-auto'
+            autoComplete="off">
+            <div className='flex flex-col gap-4'>
+                <label htmlFor="email">Email</label>
+                <input
+                    className='p-6 rounded-sm border border-gray-400'
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    {...formik.getFieldProps('email')}
+                />
+                {formik.touched.email && formik.errors.email ? <div className='text-red-500'>{formik.errors.email}</div> : null}
+                <label htmlFor="email">Password</label>
+                <input
+                    className='p-6 rounded-sm border border-gray-400'
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    {...formik.getFieldProps('password')}
+                />
+                {formik.touched.password && formik.errors.password ? <div className='text-red-500'>{formik.errors.password}</div> : null}
+            </div>
+            <div>
+                <button type="submit" className='w-full p-3 bg-blue-500 my-5 text-white rounded-lg'>Submit</button>
+            </div>
         </form>
     )
 }
