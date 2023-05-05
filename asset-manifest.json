@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.af997369.css",
-    "main.js": "/static/js/main.45927519.js",
-    "static/js/787.7efd31bd.chunk.js": "/static/js/787.7efd31bd.chunk.js",
-    "index.html": "/index.html",
-    "main.af997369.css.map": "/static/css/main.af997369.css.map",
-    "main.45927519.js.map": "/static/js/main.45927519.js.map",
-    "787.7efd31bd.chunk.js.map": "/static/js/787.7efd31bd.chunk.js.map"
+    "main.css": "/ReactJS-tren-lop/static/css/main.c69cd571.css",
+    "main.js": "/ReactJS-tren-lop/static/js/main.56679c17.js",
+    "static/js/787.402b00c4.chunk.js": "/ReactJS-tren-lop/static/js/787.402b00c4.chunk.js",
+    "static/media/home-image.png": "/ReactJS-tren-lop/static/media/home-image.2247184ccaf375b8be16.png",
+    "static/media/feedback.png": "/ReactJS-tren-lop/static/media/feedback.7b4d77c3365be511d9b1.png",
+    "static/media/image2.png": "/ReactJS-tren-lop/static/media/image2.dff91b890d9bdb46101d.png",
+    "static/media/image3.png": "/ReactJS-tren-lop/static/media/image3.af4a80db0a931b6ff1c6.png",
+    "static/media/image4.png": "/ReactJS-tren-lop/static/media/image4.4ceb1325afbed816f221.png",
+    "static/media/image1.png": "/ReactJS-tren-lop/static/media/image1.e7119410afa56bc6d872.png",
+    "index.html": "/ReactJS-tren-lop/index.html",
+    "main.c69cd571.css.map": "/ReactJS-tren-lop/static/css/main.c69cd571.css.map",
+    "main.56679c17.js.map": "/ReactJS-tren-lop/static/js/main.56679c17.js.map",
+    "787.402b00c4.chunk.js.map": "/ReactJS-tren-lop/static/js/787.402b00c4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af997369.css",
-    "static/js/main.45927519.js"
+    "static/css/main.c69cd571.css",
+    "static/js/main.56679c17.js"
   ]
 }
