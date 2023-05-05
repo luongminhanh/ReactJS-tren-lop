@@ -1,23 +1,21 @@
+import { Route, Router, Routes } from 'react-router';
 import './App.css'
 import FeatureList from './components/feature/FeatureList';
 import Footer from './components/footer/Footer';
 import NavBar from './components/navbar/NavBar';
 import Slide from './components/slide/Slide';
-// import Student from './components/testCssModule/Student';
-// import Teacher from './components/testCssModule/Teacher';
-// import FeatureItem from './components/feature/FeatureItem';
-// import FeatureList from './components/feature/FeatureList';
-// import Game from './components/tictactoe/Game';
-// import Toggle from './components/toggle/Toggle';
-// import TestSass from './components/testSass/TestSass';
+import Login from './components/Login';
+import SignIn from '../src/components/page/SignIn'
+import Home from './components/page/Home';
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <FeatureList/>
-      <Slide/>
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/login" element={<SignIn />}></Route>
+
+      </Routes>
     </div>
   );
 }
